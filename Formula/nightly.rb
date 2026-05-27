@@ -21,9 +21,9 @@ class Nightly < Formula
   license "MIT"
   head "https://github.com/ulmentflam/nightly.git", branch: "main"
 
+  depends_on "git"
   depends_on "python@3.12"
   depends_on "uv"
-  depends_on "git"
 
   def install
     # Move the unpacked source into libexec, then materialize the venv

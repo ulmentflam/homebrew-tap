@@ -15,7 +15,7 @@
 class CorpusForge < Formula
   include Language::Python::Virtualenv
 
-  desc "Chat with your data — forge a living, trainable corpus from notes, code, and chat history"
+  desc "Forge a living, trainable corpus from notes, code, and chat history"
   homepage "https://github.com/ulmentflam/corpus-forge"
   url "https://github.com/ulmentflam/corpus-forge/archive/refs/tags/v0.1.0b10.tar.gz"
   # Update this on each release. ``shasum -a 256 corpus-forge-<version>.tar.gz``
@@ -24,13 +24,15 @@ class CorpusForge < Formula
   head "https://github.com/ulmentflam/corpus-forge.git", branch: "main"
 
   depends_on "python@3.12"
-  depends_on "uv" => :recommended
 
-  # Optional runtime deps unlocked by the ``[ocr]`` and ``[whisper]``
-  # extras. Brew handles them as recommended depends_on so users can
-  # opt out (``--without-poppler``) on a per-formula basis.
-  depends_on "poppler" => :recommended
+  # Recommended deps, ordered alphabetically to satisfy
+  # FormulaAudit/DependencyOrder. ``ffmpeg``/``poppler`` are optional
+  # runtime deps unlocked by the ``[whisper]`` and ``[ocr]`` extras;
+  # ``uv`` backs the in-app ``update`` path. All are recommended so
+  # users can opt out (e.g. ``--without-poppler``).
   depends_on "ffmpeg" => :recommended
+  depends_on "poppler" => :recommended
+  depends_on "uv" => :recommended
 
   def install
     virtualenv_install_with_resources
