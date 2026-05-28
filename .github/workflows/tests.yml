@@ -11,7 +11,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-24.04, macos-13, macos-14]
+        # macOS entries are Apple Silicon (arm64): corpus-forge and key-gen
+        # ship no x86_64-macOS wheels/binaries, so Intel macOS is unsupported.
+        # macos-26 is the latest (Tahoe); macos-14 keeps older-arm64 coverage.
+        os: [ubuntu-24.04, macos-14, macos-26]
     runs-on: ${{ matrix.os }}
     env:
       # The Linux sandbox needs a rootless `bwrap`, which isn't available
