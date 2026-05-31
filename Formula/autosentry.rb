@@ -18,8 +18,8 @@ class Autosentry < Formula
 
   desc "Self-healing supervisor for long-running processes"
   homepage "https://github.com/ulmentflam/autosentry"
-  url "https://github.com/ulmentflam/autosentry/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "45ce5286d8159f66ee4f2fb24434951edb76a78792ba7a59b3c55f414886587b"
+  url "https://github.com/ulmentflam/autosentry/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "d32b7067392590a23eef1e3e194fefd52a9d15aaf9639d9269728a8f6b5f203a"
   license "Apache-2.0"
   head "https://github.com/ulmentflam/autosentry.git", branch: "main"
 
