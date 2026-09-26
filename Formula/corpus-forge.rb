@@ -24,9 +24,9 @@
 class CorpusForge < Formula
   desc "Forge a living, trainable corpus from notes, code, and chat history"
   homepage "https://github.com/ulmentflam/corpus-forge"
-  url "https://github.com/ulmentflam/corpus-forge/archive/refs/tags/v0.1.0b18.tar.gz"
+  url "https://github.com/ulmentflam/corpus-forge/archive/refs/tags/v0.1.0b21.tar.gz"
   # Update this on each release. ``shasum -a 256 corpus-forge-<version>.tar.gz``
-  sha256 "cf079e918637fd85ed112ad558401f2279ce806f0b7aab6d051b7b683b2fcb66"
+  sha256 "692a066b34667488e48d6aabc48acb41c25a01c1db99a25ed1550f2c3426d787"
   license "Apache-2.0"
   head "https://github.com/ulmentflam/corpus-forge.git", branch: "main"
 
