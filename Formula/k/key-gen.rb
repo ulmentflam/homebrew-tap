@@ -14,4 +14,13 @@ class KeyGen < Formula
   def install
     bin.install "key-gen"
   end
+
+  test do
+    # Upstream has no --version, so smoke-test --help and completion
+    # generation; both run without touching keys or 1Password.
+    help = shell_output("#{bin}/key-gen --help")
+    assert_match "create", help
+    assert_match "encrypt", help
+    assert_match "compdef", shell_output("#{bin}/key-gen completion zsh")
+  end
 end
